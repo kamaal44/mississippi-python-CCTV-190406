@@ -37,10 +37,11 @@ df_police['절도검거율'] = df_police['절도 검거'] / df_police['절도 �
 df_police['폭력검거율'] = df_police['폭력 검거'] / df_police['폭력 발생'] * 100
 
 
-df_police.drop(['강간 검거','강도 검거',
+df_police.drop(columns={'강간 검거','강도 검거',
                 '살인 검거','절도 검거',
-                '폭력 검거'],1)
-
+                '폭력 검거'},axis=1)
+print('===================')
+print(df_police.columns)
 # 검거율이 100 이 넘는 것이 있는데..  기간상의 오류
 ls_rate = ['강간검거율','강도검거율','살인검거율','절도검거율','폭력검거율']
 for i in ls_rate:
